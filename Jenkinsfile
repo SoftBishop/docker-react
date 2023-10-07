@@ -1,6 +1,8 @@
 pipeline {
+    agent{
     node {
        docker.build("-t softbishop/docker-react -f Dockerfile.dev .") 
+    }
     }
     // agent any
     
