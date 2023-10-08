@@ -9,7 +9,7 @@ pipeline {
                 sh 'docker build -t softbishop/docker-react", "-f Dockerfile.dev .'
             }
         }
-        stage {
+        stage("Test stage") {
             sh 'docker run softbishop/docker-react npm run test -- --coverage'
         }
     }
