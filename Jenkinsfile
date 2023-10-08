@@ -6,7 +6,7 @@ pipeline {
         stage("Build image from dockerfile") {
             steps{
                 echo 'Start to build docker container!!!'
-                sh 'docker build -t softbishop/docker-react", "-f Dockerfile.dev .'
+                sh 'docker build -t softbishop/docker-react -f Dockerfile.dev .'
             }
         }
         stage("Test stage") {
