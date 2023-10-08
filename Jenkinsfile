@@ -11,7 +11,7 @@ pipeline {
         }
         stage("Test stage") {
             steps{
-                sh 'docker run softbishop/docker-react npm run test -- --coverage'
+                sh 'docker run softbishop/docker-react npm run test -- --watchAll=false --coverage'
             } 
         }
     }
