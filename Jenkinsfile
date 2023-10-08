@@ -6,11 +6,11 @@ pipeline {
         stage("Build image from dockerfile") {
             steps{
                 echo 'Start to build docker container!!!'
-                //sh 'docker build -t softbishop/docker-react -f Dockerfile.dev .'
-                script {
-                    def dockerContainer = docker.build("softbishop/docker-react", "-f Dockerfile.dev .")   
-                }
+                sh 'docker build -t softbishop/docker-react", "-f Dockerfile.dev .'
             }
+        }
+        stage {
+            sh 'docker run softbishop/docker-react npm run test -- --coverage'
         }
     }
 }
